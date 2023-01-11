@@ -1,13 +1,18 @@
-<h1>詳細ページ</h1>
+<div class="flash-notifications">
+  <% flash.each do |key, value| %>
+   <%= content_tag(:div, value, class: key) %>
+  <% end %>
+</div>
 
 <h2>Title</h2>
-<p><%= @book.title %></p>
+<p><%= @books.title %></p>
 
 <h2>Body</h2>
-<p><%= @book.body %></p>
+<p><%= @books.body %></p>
 
-<%#= link_to "編集", edit_list_path(@list.id) %>
-<%#= link_to "削除", list_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<%= link_to 'Edit',  edit_book_path(@books.id)%>
+|
+<%= link_to "Back", books_path %>
 
 
 
